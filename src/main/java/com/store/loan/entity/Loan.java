@@ -5,16 +5,21 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import lombok.Data;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
+
 
 import java.time.LocalDate;
 
 @Entity
-@Table()
-@Getter
+@Table(name = "LOAN")
+@NoArgsConstructor
+@AllArgsConstructor
 @Setter
+@Getter
+
 public class Loan {
 
     @Id
@@ -45,10 +50,7 @@ public class Loan {
     @Column(name = "PENALTY_PER_DAY" ,nullable = false)
     private Double penaltyPerDay;
 
-    @Column(name = "CANCEL" ,nullable = false)
+    @Column(name = "CANCEL")
     private Boolean cancel;
-
-
-
 
 }
